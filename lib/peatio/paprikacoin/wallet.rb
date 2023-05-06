@@ -31,13 +31,12 @@ module Paprikacoin
 
     def create_transaction!(transaction, options = {})
       txid = client.json_rpc(:sendtoaddress,
-      fee = calculate_fee(transaction_hash),
                              [
                                transaction.to_address,
                                transaction.amount,
-                               fee: fee,
-                               fee_currency_id: 'papry',
-                               #options[:subtract_fee].to_s == 'true' # subtract fee from transaction amount.
+                               '',
+                               '',
+                               options[:subtract_fee].to_s == 'true' # subtract fee from transaction amount.
                              ])
       transaction.hash = txid
       transaction
