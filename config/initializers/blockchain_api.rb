@@ -1,0 +1,13 @@
+Peatio::Blockchain.registry[:bitcoin] = Bitcoin::Blockchain
+Peatio::Blockchain.registry[:geth] = Ethereum::Eth::Blockchain
+Peatio::Blockchain.registry[:parity] = Ethereum::Eth::Blockchain
+Peatio::Blockchain.registry[:"geth-bsc"] = Ethereum::Bsc::Blockchain
+Peatio::Blockchain.registry[:"geth-heco"] = Ethereum::Heco::Blockchain
+Peatio::Blockchain.registry[:fiat] = Peatio::Fiat
+Peatio::Blockchain.registry[:ravencoin] = Ravencoin::Blockchain
+Peatio::Blockchain.registry[:fork_bitcoin_old] = ForkBitcoinOld::Blockchain
+Peatio::Blockchain.registry[:ojx] = Ojx::Blockchain
+Peatio::Blockchain.registry[:dogecoin] = Dogecoin::Blockchain
+Peatio::Blockchain.registry[:evm] = Evm::Blockchain
+Peatio::Blockchain.registry[:paprikacoin] = Paprikacoin::Blockchain
+Peatio::Blockchain.registry[:tron] = Tron::Blockchain
