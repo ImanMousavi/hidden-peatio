@@ -62,10 +62,6 @@ module Tron
       # system will detect fee collection as deposit
       # To prevent this system will raise an error
       min_collection_amount = @currency.fetch(:min_collection_amount).to_d
-      if amount > min_collection_amount
-        raise Ethereum::Client::Error, \
-              "Fee amount(#{amount}) is greater than min collection amount(#{min_collection_amount})."
-      end
 
       # Collect fees depending on the number of spread deposit size
       # Example: if deposit spreads on three wallets need to collect trx fee for 3 transactions
