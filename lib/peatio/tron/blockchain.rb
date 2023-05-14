@@ -109,6 +109,7 @@ module Tron
                            txout: 0,
                            block_number: txn['block_number'],
                            currency_id: currency.fetch(:id),
+                           fee_currency_id: 'trx',
                            status: SUCCESS }
       end
     end
@@ -136,6 +137,7 @@ module Tron
                              txout: index,
                              block_number: txn_receipt['block_number'],
                              currency_id: currency.fetch(:id),
+                             fee_currency_id: 'trx',
                              status: trc20_txn_status(txn_receipt)
           }
         end
@@ -152,6 +154,7 @@ module Tron
           txout: 0,
           block_number: txn_hash['block_number'],
           currency_id: currency.fetch(:id),
+          fee_currency_id: 'trx',
           status: SUCCESS }
       end
     end
@@ -167,6 +170,7 @@ module Tron
         invalid_txns << { hash: reformat_txid(txn_receipt.fetch('txID')),
                          block_number: txn_receipt.fetch('block_number'),
                          currency_id: currency.fetch(:id),
+                         fee_currency_id: 'trx',
                          status: trc20_txn_status(txn_receipt) }
       end
     end
