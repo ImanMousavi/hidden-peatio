@@ -1,5 +1,6 @@
 Peatio::Wallet.registry[:bitcoind] = Bitcoin::Wallet
 Peatio::Wallet.registry[:geth] = Ethereum::Eth::Wallet
+Peatio::Wallet.registry[:"geth-bsc"] = Ethereum::Bsc::Wallet
 Peatio::Wallet.registry[:parity] = Ethereum::Eth::Wallet
 Peatio::Wallet.registry[:gnosis] = Gnosis::Wallet
 Peatio::Wallet.registry[:"ow-hdwallet-eth"] = OWHDWallet::WalletETH
