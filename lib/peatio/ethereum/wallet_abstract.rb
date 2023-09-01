@@ -69,15 +69,6 @@ module Ethereum
       fees = convert_from_base_unit(options.fetch(:gas_limit).to_i * options.fetch(:gas_price).to_i)
       amount = fees * deposit_spread.size
 
-      # If fee amount is greater than min collection amount
-      # system will detect fee collection as deposit
-      # To prevent this system will raise an error
-      min_collection_amount = @currency.fetch(:min_collection_amount).to_d
-      if amount > min_collection_amount
-        raise Ethereum::Client::Error, \
-              "Fee amount(#{amount}) is greater than min collection amount(#{min_collection_amount})."
-      end
-
       transaction.amount = amount
       transaction.options = options
 
